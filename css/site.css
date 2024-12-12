@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .header {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .row {
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  .column {
+    padding: 10px;
+  }
+  
+  .column.side {
+     -webkit-flex: 2;
+     -ms-flex: 2;
+     flex: 2;
+  }
+  
+  .column.middle {
+    -webkit-flex: 4;
+    -ms-flex: 4;
+    flex: 4;
+  }
+  
