@@ -16,7 +16,69 @@ const projects = [
         description: "Collaborated on faculty-led projects involving computer vision, data analysis, and machine learning using HuggingFace models. These projects deepened my understanding of data processing pipelines and AI-driven solutions."
     },
     { 
-        title: "IoT and 3D Printing Innovations", 
+        title: "IoT", 
+        description: "Integrated software development with hardware by designing IoT systems involving Arduino and Raspberry Pi devices, complemented with custom 3D-printed components. Projects range from smart home devices to functional prototypes for industry-specific solutions."
+    },
+    { 
+        title: "3D Printing", 
         description: "Integrated software development with hardware by designing IoT systems involving Arduino and Raspberry Pi devices, complemented with custom 3D-printed components. Projects range from smart home devices to functional prototypes for industry-specific solutions."
     }
 ];
+
+const languages= [ 
+    { 
+        title: "PHP",  
+        percentage: 60
+    },
+    { 
+        title: "Python",  
+        percentage: 65
+    }, 
+    { 
+        title: "C#",  
+        percentage: 80
+    }, 
+    { 
+        title: "C++",  
+        percentage: 75
+    }, 
+];
+
+const databases= [ 
+    { 
+        title: "MySQL",  
+        percentage: 60
+    },
+    { 
+        title: "MongoDb",  
+        percentage: 80
+    }, 
+    { 
+        title: "SQLite",  
+        percentage: 40
+    }, 
+    { 
+        title: "Neo4j",  
+        percentage: 50
+    }, 
+];
+
+const frameworks= [ 
+    { 
+        title: ".NET Blazor",  
+        percentage: 75
+    },
+    { 
+        title: "ASP.NET Core",  
+        percentage: 80
+    },
+    { 
+        title: "Symfony",  
+        percentage: 70
+    }, 
+    { 
+        title: "Django",  
+        percentage: 50
+    }
+];
+
