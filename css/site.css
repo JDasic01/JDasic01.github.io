@@ -1,36 +1,150 @@
+
+/* General */
 * {
     box-sizing: border-box;
   }
   
-  body {
-    font-family: Arial, Helvetica, sans-serif;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 16px;
+}
+
+/* Sections */
+section {
+  padding: 40px 20px;
+}
+
+main h2 {
+  border-left: 4px solid #000; 
+  border-bottom: 4px solid #000;
+  padding: 20px 30px; 
+  display: inline-block; 
+  width: 90%;
+}
+
+/* Navbar */
+
+/* Hero Section */
+#hero {
+  height: 300px;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+}
+
+.left {
+  height: 80%; /* Keep the same height */
+  width: 40%; /* Keep the same width */
+  padding: 10px;
+
+  /* Optional: Add Flexbox for centering content within each section */
+  display: flex;
+  align-items: left; /* Vertically center content */
+}
+
+.right {
+  height: 80%; /* Keep the same height */
+  width: 60%; /* Keep the same width */
+  border: 1px ridge #000000;
+  padding: 10px;
+}
+
+
+span {
+  display: block;
+  font-size: calc(1.5rem + 0.5vw);
+}
+
+span:first-child{
+  font-family: 'Montserrat ExtraBold', sans-serif;
+}
+
+span:last-child{
+  font-family: 'Montserrat Light', sans-serif;
+  animation: fadeIn 1s 1s forwards cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.effect {
+  margin: 40px;
+}
+
+.text-effect p {
+  border-left: 4px solid #000; 
+  border-bottom: 4px solid #000;
+  padding: 20px 30px; 
+  display: inline-block; 
+  transform: scaleY(0);
+  animation: scaleUpBorder 1s forwards cubic-bezier(0.85, 0, 0.15, 1);
+  overflow: hidden;
+}
+
+.text-effect .text-wrapper {
+  transform: translateX(calc(-100% - 20px));
+  animation: slideTextRight 1s 0.5s forwards cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+@keyframes scaleUpBorder {
+  to {
+    transform: scaleY(1);
   }
-  
-  .header {
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: left;
-    font-size: 20px;
+}
+
+@keyframes slideTextRight {
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Projects */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.grid-item {
+  flex: 1 1 calc(50% - 20px);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.grid-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.grid-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #navbar {
+      flex-direction: column;
+      align-items: center;
   }
 
-  .row {
-    display: -webkit-flex;
-    display: flex;
+  .projects {
+      grid-template-columns: 1fr;
   }
-  
-  .column {
-    padding: 10px;
-  }
-  
-  .column.side {
-     -webkit-flex: 2;
-     -ms-flex: 2;
-     flex: 2;
-  }
-  
-  .column.middle {
-    -webkit-flex: 4;
-    -ms-flex: 4;
-    flex: 4;
-  }
-  
+}

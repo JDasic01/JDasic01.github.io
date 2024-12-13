@@ -5,109 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jelena Dašić - Backend Developer Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css" 
 </head>
 <body>
+<div id="navbar">
+    <a href="#about">About me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</div>
 
-<header>
-    <h1>Jelena Dasic - Backend Developer</h1>
-</header>
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
+<div>
+    <!--Introduction, About me-->
+    <div id="hero">
+        <div class="left">
+            <div class="text-effect effect">
+                <p>
+                    <span class="text-wrapper">
+                        <span>Hi, I'm Jelena Dašić</span>
+                        <span>A Backend Developer</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+          
+        <div class="right">
+           <section id="about">
+                <h2>About Me</h2>
+                <p>
+                    Lorem ipsum 
+                </p>
+            </section>
+        </div>
     </div>
-  </nav>
-  
-<main>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Lorem ipsum 
-        </p>
-    </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Languages:</strong> PHP, C#, Python</li>
-            <li><strong>Frameworks:</strong> Symfony 6, .NET MAUI, ASP.NET Core, Blazor (Server & Client), API Platform</li>
-            <li><strong>Databases:</strong> SQL Server, MongoDB, MySQL, Neo4j</li>
-            <li><strong>DevOps & Cloud:</strong> Docker, Kubernetes, Microsoft Azure</li>
-            <li><strong>IoT:</strong> Arduino, Raspberry Pi, integrated IoT solutions</li>
-            <li><strong>3D Modeling:</strong> Blender, Fusion 360 for custom enclosures, and prototypes</li>
-        </ul>
-    </section>
+    <!--Skills-->
+    <main>
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><strong>Languages:</strong> PHP, C#, Python</li>
+                <li><strong>Frameworks:</strong> Symfony 6, .NET MAUI, ASP.NET Core, Blazor (Server & Client), API Platform</li>
+                <li><strong>Databases:</strong> SQL Server, MongoDB, MySQL, Neo4j</li>
+                <li><strong>DevOps & Cloud:</strong> Docker, Kubernetes, Microsoft Azure</li>
+                <li><strong>IoT:</strong> Arduino, Raspberry Pi, integrated IoT solutions</li>
+                <li><strong>3D Modeling:</strong> Blender, Fusion 360 for custom enclosures, and prototypes</li>
+            </ul>
+        </section>
+    
+        <div class="grid" id="projectGrid"></div>
+        <script src="js/data.js"></script>
+        <script src="js/script.js"></script>
 
-    <section id="projects">
-        <h2>Projects Portfolio</h2>
-
-        <article>
-            <h3>IoT-Integrated Webshop with .NET Framework</h3>
-            <p>
-                Developed a mobile and web application for an IoT-powered automatic cocktail maker. The solution includes a MAUI-based mobile app, Blazor Server for admin and user interfaces, ASP.NET Core API, and a MongoDB backend. This project demonstrates my ability to integrate IoT devices with complex backend systems.
-            </p>
-        </article>
-
-        <article>
-            <h3>Shortest Train Route Finder</h3>
-            <p>
-                Created a Blazor Server and ASP.NET Core web application to calculate optimal train routes using Dijkstra's algorithm. The system, powered by Neo4j for graph-based queries, leverages Docker for containerization and a message bus for high-performance route computations and caching.
-            </p>
-        </article>
-
-        <article>
-            <h3>Symfony API Development</h3>
-            <p>
-                Built RESTful APIs using Symfony 6 and API Platform, with integration into AWS for cloud deployment. Focused on efficient data handling, security, and scalable architectures using Symfony UX and Twig for front-end components.
-            </p>
-        </article>
-
-        <article>
-            <h3>Data Engineering & Machine Learning</h3>
-            <p>
-                Collaborated on faculty-led projects involving computer vision, data analysis, and machine learning using HuggingFace models. These projects deepened my understanding of data processing pipelines and AI-driven solutions.
-            </p>
-        </article>
-
-        <article>
-            <h3>IoT and 3D Printing Innovations</h3>
-            <p>
-                Integrated software development with hardware by designing IoT systems involving Arduino and Raspberry Pi devices, complemented with custom 3D-printed components. Projects range from smart home devices to functional prototypes for industry-specific solutions.
-            </p>
-        </article>
-    </section>
-
-    <section id="contact">
-        <h2>Get in Touch</h2>
-        <p>I'm open to collaborations and exciting projects. Reach out to discuss potential opportunities.</p>
-        <p>Email: <a href="mailto:jdasic1@gmail.com">jelena.dasic@gmail.com</a></p>
-        <p>Find me on <a href="https://www.linkedin.com/in/jelena-dasic-862692217/" target="_blank">LinkedIn</a></p>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2024 Jelena Dasic. All Rights Reserved.</p>
-</footer>
-
+        <section id="projects">
+            <h2>Projects Portfolio</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>IoT-Integrated Webshop with .NET Framework</h3>
+                    <p>
+                        Developed a mobile and web application for an IoT-powered automatic cocktail maker. The solution includes a MAUI-based mobile app, Blazor Server for admin and user interfaces, ASP.NET Core API, and a MongoDB backend. This project demonstrates my ability to integrate IoT devices with complex backend systems.
+                    </p>
+                </div>
+        
+                <div class="project-card">
+                    <h3>Shortest Train Route Finder</h3>
+                    <p>
+                        Created a Blazor Server and ASP.NET Core web application to calculate optimal train routes using Dijkstra's algorithm. The system, powered by Neo4j for graph-based queries, leverages Docker for containerization and a message bus for high-performance route computations and caching.
+                    </p>
+                </div>
+        
+                <div class="project-card">
+                    <h3>Symfony API Development</h3>
+                    <p>
+                        Built RESTful APIs using Symfony 6 and API Platform, with integration into AWS for cloud deployment. Focused on efficient data handling, security, and scalable architectures using Symfony UX and Twig for front-end components.
+                    </p>
+                </div>
+        
+                <div class="project-card">
+                    <h3>Data Engineering & Machine Learning</h3>
+                    <p>
+                        Collaborated on faculty-led projects involving computer vision, data analysis, and machine learning using HuggingFace models. These projects deepened my understanding of data processing pipelines and AI-driven solutions.
+                    </p>
+                </div>
+        
+                <div class="project-card">
+                    <h3>IoT and 3D Printing Innovations</h3>
+                    <p>
+                        Integrated software development with hardware by designing IoT systems involving Arduino and Raspberry Pi devices, complemented with custom 3D-printed components. Projects range from smart home devices to functional prototypes for industry-specific solutions.
+                    </p>
+                </div>
+            </div>
+        </section>
+    
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>I'm open to collaborations and exciting projects. Reach out to discuss potential opportunities.</p>
+            <p>Email: <a href="mailto:jdasic1@gmail.com">jelena.dasic@gmail.com</a></p>
+            <p>Find me on <a href="https://www.linkedin.com/in/jelena-dasic-862692217/" target="_blank">LinkedIn</a></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Jelena Dasic. All Rights Reserved.</p>
+    </footer>
+    
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
