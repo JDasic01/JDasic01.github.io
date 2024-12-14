@@ -2,7 +2,7 @@
 function createSkillsChart(skills, chartContainer) {
     // Constants for the chart layout
     const width = 450;
-    const height = 200;
+    const height = 100;
     const marginTop = 30;
     const marginRight = 0;
     const marginBottom = 30;
