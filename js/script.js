@@ -25,7 +25,7 @@ function createSkillsChart(skills, chartContainer) {
         .attr("width", width)
         .attr("height", height)
         .attr("viewBox", [0, 0, width, height])
-        .attr("style", "max-width: 100%; height: auto;");
+        .attr("style", "max-width: 80%; height: 100%;");
 
     // Add a rect for each skill.
     svg.append("g")
