@@ -58,12 +58,15 @@ function createSkillsChart(skills, chartContainer) {
 
 // Projects grid
 const populateGrid = (projects) => {
-    const gridContainer = document.getElementById("projectGrid");
-
-    projects.forEach(project => {
+    const gridContainer = document.getElementById("projects-grid");
+    let delay = 150;
+    projects.forEach((project, index) => {
         // Create grid item
         const gridItem = document.createElement("div");
         gridItem.classList.add("grid-item");
+
+        // Add transition delay style
+        gridItem.style.transitionDelay = `${delay * index}ms`;
 
         // Add project title
         const projectTitle = document.createElement("h3");
@@ -82,9 +85,41 @@ const populateGrid = (projects) => {
     });
 };
 
-window.onload = function() {
-    createSkillsChart(languages, '.chart-container-languages');  
-    createSkillsChart(frameworks, '.chart-container-frameworks');  
-    createSkillsChart(databases, '.chart-container-databases');  
-    populateGrid(projects);  
-};
+const projectsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            document.querySelectorAll('.grid-item').forEach((item) => {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, parseInt(item.style.transitionDelay));
+            });
+        } else 
+        {
+            //dont show after loaded once, load each time the user is scrolling on page
+            document.querySelectorAll('.grid-item').forEach((item) => {
+                setTimeout(() => {
+                    item.classList.remove('visible');
+                }, parseInt(item.style.transitionDelay));
+            });
+        }
+    });
+}, { threshold: 0.1 }); // Trigger when at least 10% of the section is visible
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el => observer.observe(el)));
+const projectGrid = document.getElementById('projects-grid');
+projectsObserver.observe(projectGrid);
+populateGrid(projects);
+createSkillsChart(languages, '.chart-container-languages');  
+createSkillsChart(frameworks, '.chart-container-frameworks');  
+createSkillsChart(databases, '.chart-container-databases'); 

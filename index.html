@@ -17,32 +17,32 @@
     </div>
 
     <div>
-        <!--Introduction, About me-->
-        <div id="hero">
-            <div class="left">
-                <div class="text-effect effect">
-                    <p>
-                        <span class="text-wrapper">
-                            <span>Hi, I'm Jelena Dašić</span>
-                            <span>A Backend Developer</span>
-                        </span>
-                    </p>
-                </div>
-            </div>
-            
-            <div class="right">
-            <section id="about">
-                    <h2>About Me</h2>
-                    <p>
-                        Lorem ipsum 
-                    </p>
-                </section>
-            </div>
-        </div>
         <!--Main-->
         <main>
+            <!--Introduction, About me-->
+            <section>
+                <div id="hero">
+                    <div class="left">
+                        <div class="text-effect effect">
+                            <p>
+                                <span class="text-wrapper">
+                                    <span>Hi, I'm Jelena Dašić</span>
+                                    <span>A Backend Developer</span>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="right">
+                            <h2>About Me</h2>
+                            <p>
+                                Lorem ipsum 
+                            </p>
+                    </div>
+                </div>
+            </section>
             <!--Skills-->
-            <section id="skills">
+            <section id="skills" class="hidden">
                 <h2>Technical Skills</h2>
                 <div class="skills-grid">
                     <div class="skills-item">
@@ -58,25 +58,26 @@
                         <div class="chart-container-databases"></div>
                     </div>
                 </div>
-                
-                <p>Other skills</p>
-                <ul>
-                    <li><strong>DevOps & Cloud:</strong> Docker, Kubernetes, Microsoft Azure</li>
-                    <li><strong>IoT:</strong> Arduino, Raspberry Pi, integrated IoT solutions</li>
-                    <li><strong>3D Modeling:</strong> Blender, Fusion 360 for custom enclosures, and prototypes</li>
-                </ul>
+                <div class="hidden">
+                    <h3>Other skills</h3>
+                    <ul>
+                        <li><strong>DevOps & Cloud:</strong> Docker, Kubernetes, Microsoft Azure</li>
+                        <li><strong>IoT:</strong> Arduino, Raspberry Pi, integrated IoT solutions</li>
+                        <li><strong>3D Modeling:</strong> Blender, Fusion 360 for custom enclosures, and prototypes</li>
+                    </ul>
+                </div>
             </section>
             <!--End Skills-->
 
             <!--Projects-->
-            <section id="projects">
+            <section id="projects" class="hidden">
                 <h2>Projects Portfolio</h2>
-                <div class="grid" id="projectGrid"></div>
+                <div class="grid" id="projects-grid"></div>
             </section>
             <!--End Projects-->
 
             <!--Contact-->
-            <section id="contact">
+            <section id="contact" class="hidden">
                 <h2>Get in Touch</h2>
                 <p>I'm open to collaborations and exciting projects. Reach out to discuss potential opportunities.</p>
                 <p>Email: <a href="mailto:jdasic1@gmail.com">jelena.dasic@gmail.com</a></p>
@@ -95,6 +96,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src = "https://cdn.jsdelivr.net/npm/d3@7"></script> 
     <script src="js/data.js"></script>
-    <script src="js/script.js"></script>
+    <script defer src="js/script.js"></script>
 </body>
 </html>
