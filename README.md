@@ -1,2 +1,2 @@
 # jelena-dasic.github.io
-portfolio
+portfolio - Tehnologije interaktivnog weba
