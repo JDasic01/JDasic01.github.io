@@ -16,7 +16,9 @@
     <a href="index.htmlcv.html">CV</a>
 </div>
 
-<div>
+<button onclick="cvPdfCreate()">Save CV as pdf</button>
+
+<div id="cv">
   <div>
     <div>
         <div>
@@ -99,17 +101,11 @@
             </div>
         <!-- End Right Column -->
         </div>
-    
   <!-- End Grid -->
   </div>
-  
   <!-- End Page Container -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
 </div>
-
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Find me on LinkedIn.</p>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-</footer>
-
 </body>
 </html>

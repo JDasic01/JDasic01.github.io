@@ -135,6 +135,11 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
+function cvPdfCreate() {
+    var element = document.getElementById('cv');
+    html2pdf(element);
+}
+
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el => observer.observe(el)));
 
