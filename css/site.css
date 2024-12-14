@@ -40,7 +40,11 @@ main section{
 /* Navbar */
 #navbar {
   top:0;
-  position:fixed;
+  position:sticky;
+  background: #000;
+  width: 100%;
+  height: 60px;
+  z-index: 1050;
 }
 
 /* Hero Section */
@@ -65,7 +69,6 @@ main section{
 .right {
   height: 80%; /* Keep the same height */
   width: 60%; /* Keep the same width */
-  border: 1px ridge #000000;
   padding: 10px;
 }
 
@@ -125,11 +128,11 @@ main {
 }
 
 main h2 {
-  border-left: 4px solid #000; 
-  border-bottom: 4px solid #000;
+  border-left: 3px solid #000; 
+  border-bottom: 3px solid #000;
   padding-left: 10px;
   display: inline-block; 
-  width: 80%;
+  width: 90%;
 }
 
 /* Skills Chart Containers */
@@ -211,7 +214,6 @@ main h2 {
 
 /* Footer */
 footer {
-  background-color: #f8f9fa;
   padding: 10px 0;
   text-align: center;
   font-size: 0.9rem;

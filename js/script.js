@@ -103,7 +103,27 @@ const projectsObserver = new IntersectionObserver((entries) => {
             });
         }
     });
-}, { threshold: 0.1 }); // Trigger when at least 10% of the section is visible
+}, { threshold: 0.2 }); // Trigger when at least 20% of the section is visible
+
+const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            document.querySelectorAll('.skills-item').forEach((item) => {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, parseInt(item.style.transitionDelay));
+            });
+        } else 
+        {
+            //dont show after loaded once, load each time the user is scrolling on page
+            document.querySelectorAll('.skills-item').forEach((item) => {
+                setTimeout(() => {
+                    item.classList.remove('visible');
+                }, parseInt(item.style.transitionDelay));
+            });
+        }
+    });
+}, { threshold: 0.2 }); 
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -117,9 +137,13 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el => observer.observe(el)));
+
 const projectGrid = document.getElementById('projects-grid');
-projectsObserver.observe(projectGrid);
 populateGrid(projects);
+projectsObserver.observe(projectGrid);
+
+const skillsGrid = document.getElementById('skills');
 createSkillsChart(languages, '.chart-container-languages');  
 createSkillsChart(frameworks, '.chart-container-frameworks');  
 createSkillsChart(databases, '.chart-container-databases'); 
+skillsObserver.observe(skillsGrid);
