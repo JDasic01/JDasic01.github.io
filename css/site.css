@@ -143,7 +143,7 @@ main h2 {
 .skills-item {
   opacity: 0;
   transform: translateY(20px);
-  flex: 1 1 calc(50% - 20px);
+  flex: 1 1 calc(33% - 20px);
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
@@ -155,7 +155,7 @@ main h2 {
 .skills-item.visible {
   opacity: 1;
   transform: translateY(0);
-  flex: 1 1 calc(50% - 20px);
+  flex: 1 1 calc(33% - 20px);
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
