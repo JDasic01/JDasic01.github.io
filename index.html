@@ -80,36 +80,36 @@
             <!--Contact-->
             <section id="contact" class="hidden">
                 <h2>Get in Touch</h2>
-                <p>I'm open to collaborations and exciting projects. Reach out to discuss potential opportunities. You can find me on <a href="https://www.linkedin.com/in/jelena-dasic-862692217/" target="_blank">LinkedIn</a>, contact via email: <a href="mailto:jdasic1@gmail.com">jelena.dasic@gmail.com</a>.</p>
-                <p>Or contact with the form below:</p>      
+                <p>I'm open to collaborations and exciting projects. Reach out to discuss potential opportunities. You can find me on <a href="https://www.linkedin.com/in/jelena-dasic-862692217/" target="_blank">LinkedIn</a>, contact via email: <a href="mailto:jdasic1@gmail.com">jelena.dasic@gmail.com</a> or with the form below.</p>    
                 <!-- Contact Form -->
                 <div class="container mt-5">
-                    <h3>Contact Us</h3>
                     <form action="/submit-form" method="POST">
                     <div class="row">
                         <!-- Name Field -->
-                        <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name">First Name</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
                         </div>
                 
                         <!-- Surname Field -->
-                        <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="surname">Surname</label>
-                            <input type="text" class="form-control" id="surname" name="surname" required>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="surname">Surname</label>
+                                <input type="text" class="form-control" id="surname" name="surname" required>
+                            </div>
                         </div>
+                    
+                
+                        <!-- Email Field -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
                         </div>
                     </div>
-                
-                    <!-- Email Field -->
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                
                     <!-- Subject Field -->
                     <div class="form-group">
                         <label for="subject">Subject</label>
@@ -125,23 +125,25 @@
                     <!-- Inquiry Type Checkboxes -->
                     <fieldset class="form-group">
                         <legend>What is your inquiry about?</legend>
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="inquiry1" name="inquiry[]" value="Support">
-                        <label class="form-check-label" for="inquiry1">
-                            Support
-                        </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="inquiry2" name="inquiry[]" value="Sales">
-                        <label class="form-check-label" for="inquiry2">
-                            Sales
-                        </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="inquiry3" name="inquiry[]" value="General">
-                        <label class="form-check-label" for="inquiry3">
-                            General Inquiry
-                        </label>
+                        <div class="row">
+                                <div class="form-check col-md-2">
+                                    <input class="form-check-input" type="checkbox" id="inquiry1" name="inquiry[]" value="Support">
+                                    <label class="form-check-label" for="inquiry1">
+                                        Project outsorcing
+                                    </label>
+                                </div>
+                                <div class="form-check col-md-2">
+                                    <input class="form-check-input" type="checkbox" id="inquiry2" name="inquiry[]" value="Sales">
+                                    <label class="form-check-label" for="inquiry2">
+                                        Freelancing
+                                    </label>
+                                </div>
+                                <div class="form-check col-md-2">
+                                    <input class="form-check-input" type="checkbox" id="inquiry3" name="inquiry[]" value="General">
+                                    <label class="form-check-label" for="inquiry3">
+                                        Other
+                                    </label>
+                                </div>
                         </div>
                     </fieldset>
                     <!-- Submit Button -->
