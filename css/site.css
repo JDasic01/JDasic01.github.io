@@ -312,37 +312,33 @@ footer {
   }
 
   /* Stack skill charts one below another */
-  #skills {
-      display: block;
+  .skills-grid {
+    display: block;
   }
 
-  #skills .chart-container {
-      width: 100%;
-      margin-bottom: 20px;
+  .skills-item {
+    margin-bottom: 20px;
+    flex: 1 1 100%;
   }
 
   /* Projects grid items */
   .grid {
-      display: block;
+    display: block;
   }
 
   .grid-item {
-      margin-bottom: 20px;
-      flex: 1 1 100%;
+    margin-bottom: 20px;
+    flex: 1 1 100%;
   }
 }
 
 @media (min-width: 769px) {
-  /* For larger screens, display charts in a row */
-  #skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+  #navbar a {
+    display: flex; /* Show links horizontally */
+    flex-direction: row;
   }
 
-  /* Keep each skill chart at equal width */
-  #skills .chart-container {
-      width: 32%;
-      margin-bottom: 20px;
+  #navbar a.icon {
+    display: none; /* Hide hamburger menu */
   }
 }

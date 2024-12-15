@@ -140,6 +140,15 @@ function cvPdfCreate() {
     html2pdf(element);
 }
 
+function navMenu() {
+    const navbar = document.getElementById("navbar");
+    if (navbar.style.display === "block") {
+      navbar.style.display = "none";
+    } else {
+      navbar.style.display = "block";
+    }
+}  
+
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el => observer.observe(el)));
 
