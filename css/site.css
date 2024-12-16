@@ -381,6 +381,15 @@ footer {
     flex: 1 1 100%; /* Full width for skill items */
   }
 
+  .chart-container-languages svg,
+  .chart-container-frameworks svg,
+  .chart-container-databases svg {
+    width: 90% !important; /* Make chart half the size */
+    height: auto !important;
+    margin: 0 auto; /* Center align the chart */
+    display: block; /* Ensure the SVG behaves as a block element */
+  }
+
   /* Projects */
   .grid-item {
     flex: 1 1 100%; /* Full width for grid items */

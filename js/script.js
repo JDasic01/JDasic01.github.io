@@ -2,14 +2,13 @@
 function createSkillsChart(skills, chartContainer) {
     // Calculate dimensions dynamically based on content
     const longestLabel = skills.reduce((longest, skill) => skill.title.length > longest.length ? skill.title : longest, "");
-    const labelWidth = longestLabel.length * 8; // Estimate label width (8px per character)
-
-    const width = Math.max(500, labelWidth + 100); // Ensure enough space for labels
-    const height = skills.length * 40 + 50; // Adjust height for number of skills
+    const labelWidth = longestLabel.length * 8; 
+    const width = Math.max(500, labelWidth + 100); 
+    const height = skills.length * 40 + 50; 
     const marginTop = 10;
     const marginRight = 20;
     const marginBottom = 40;
-    const marginLeft = labelWidth + 20; // Dynamically set left margin for labels
+    const marginLeft = labelWidth + 20; 
 
     const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -51,7 +50,7 @@ function createSkillsChart(skills, chartContainer) {
         .attr("transform", `translate(${marginLeft},0)`)
         .call(d3.axisLeft(y).tickSizeOuter(0))
         .call(g => g.selectAll("text")
-            .style("font-size", "14px") // Ensure labels are large enough
+            .style("font-size", "8px") // Ensure labels are large enough
             .attr("dy", "0.35em") // Center text vertically
             .attr("dx", "-0.5em")); // Add space between labels and axis
 }
