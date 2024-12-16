@@ -11,43 +11,48 @@ body {
 }
 
 /* Navbar */
-#navbar {
-  top:0;
+ul.nav {
+  top: 0;
   position: sticky;
   background: #2D3142;
   width: 100%;
   height: 60px;
   z-index: 999;
-  display: flex;
-  justify-content: end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-#navbar a {
-  font-size: 1em;
-  font-weight: 500;
+.nav li {
+  float: left;
+}
+
+.nav a {
+  display: block;
   color: #fff;
   text-decoration: none;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 1em;
+  font-weight: 500;
   transition: 0.3s ease;
-  padding: 20px;
 }
 
-#navbar a:hover {
-  font-size: 1em;
+.nav a:hover {
   color: rgb(240, 245, 252);
   text-decoration: underline;
-  padding: 20px;
 }
 
-#navbar a:active {
-  font-size: 1em;
-  color: rgb(240, 245, 252);
-  text-decoration: underline;
-  padding: 20px;
+.nav .icon {
+  display: none;
+  float: right;
+  padding: 14px 16px;
+  cursor: pointer;
 }
 
 main section{
-  padding: 50px 20px;
-  min-height: 50vh;
+  min-height: 20vh;
 }
 
 /* Scroll animation */
@@ -67,28 +72,50 @@ main section{
 }
 
 /* Hero Section */
-#hero {
-  height: 300px;
+div.hero {
   display: flex;
-  align-items: center; 
+  flex-direction: row;
   justify-content: space-between;
-  min-height: 80vh;
+  align-items: right;
+  width: 100%; 
 }
 
-.left {
-  height: 80%; /* Keep the same height */
-  width: 40%; /* Keep the same width */
-  padding: 10px;
+div.hero .left {
+  width: 30%; 
+  justify-content: end;
+}
 
-  /* Optional: Add Flexbox for centering content within each section */
+div.hero .right {
+  width: 60%; 
+} 
+
+/* Image transition styles */
+img.responsive-image {
+  width: 100%;
+  max-width: 400px; 
+  height: auto;
+  border-radius: 0; 
+  transition: border-radius 0.5s ease, transform 0.5s ease;
+}
+
+img.responsive-image.round {
+  border-radius: 50%; 
+  transform: scale(1.1); 
+}
+
+/* Wrapper for centering */
+.image-container {
   display: flex;
-  align-items: left; /* Vertically center content */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.right {
-  height: 80%; /* Keep the same height */
-  width: 60%; /* Keep the same width */
-  padding: 10px;
+/* Media query for responsiveness */
+@media (max-width: 800px) {
+  img.responsive-image {
+    max-width: 200px; 
+  }
 }
 
 span {
@@ -269,9 +296,26 @@ footer {
 
 /* Responsive Design */
 /* Small screens */
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   * {
     box-sizing: border-box;
+  }
+
+  ul.nav li {
+    float: none;
+    display: none; /* Hide items by default */
+    text-align: left;
+  }
+
+  ul.nav li.active {
+    display: block;
+  }
+
+  ul.nav .icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
   
   body {
@@ -280,12 +324,7 @@ footer {
   }
 
   main section{
-    min-height: 50vh;
-  }
-
-  #navbar {
-      flex-direction: column;
-      align-items: center;
+    min-height: 80vh;
   }
 
   /* Hero Section */
@@ -297,8 +336,8 @@ footer {
   }
 
   .left {
-    height: 80%; 
-    width: 80%; 
+    max-height: 80%; 
+    max-width: 80%; 
     padding: 10px;
     display: flex;
     align-items: left; 
@@ -329,16 +368,5 @@ footer {
   .grid-item {
     margin-bottom: 20px;
     flex: 1 1 100%;
-  }
-}
-
-@media (min-width: 769px) {
-  #navbar a {
-    display: flex; /* Show links horizontally */
-    flex-direction: row;
-  }
-
-  #navbar a.icon {
-    display: none; /* Hide hamburger menu */
   }
 }
