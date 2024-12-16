@@ -92,13 +92,6 @@ const projectsObserver = new IntersectionObserver((entries) => {
                     item.classList.add('visible');
                 }, parseInt(item.style.transitionDelay));
             });
-        } else 
-        {
-            document.querySelectorAll('.grid-item').forEach((item) => {
-                setTimeout(() => {
-                    item.classList.remove('visible');
-                }, parseInt(item.style.transitionDelay));
-            });
         }
     });
 }, { threshold: 0.1 }); 
@@ -111,14 +104,7 @@ const skillsObserver = new IntersectionObserver((entries) => {
                     item.classList.add('visible');
                 }, parseInt(item.style.transitionDelay));
             });
-        } else 
-        {
-            document.querySelectorAll('.skills-item').forEach((item) => {
-                setTimeout(() => {
-                    item.classList.remove('visible');
-                }, parseInt(item.style.transitionDelay));
-            });
-        }
+        } 
     });
 }, { threshold: 0.1 }); 
 
@@ -144,10 +130,10 @@ const projectGrid = document.getElementById('projects-grid');
 populateGrid(projects);
 projectsObserver.observe(projectGrid);
 
-const skillsGrid = document.getElementById('skills');
 createSkillsChart(languages, '.chart-container-languages');  
 createSkillsChart(frameworks, '.chart-container-frameworks');  
 createSkillsChart(databases, '.chart-container-databases'); 
+const skillsGrid = document.getElementById('skills-grid');
 skillsObserver.observe(skillsGrid);
 
 function toggleMenu() {
