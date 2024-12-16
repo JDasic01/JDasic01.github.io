@@ -87,6 +87,26 @@ nav ul.active li {
   justify-self: center;
 }
 
+/* Image Animation */
+.circle-to-square {
+  width: 200px; /* Fixed width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Initial circular border */
+  overflow: hidden; /* Ensure content stays within the border */
+  transition: border-radius 2s ease; /* Smooth transition */
+  animation: circleToSquare 2s ease forwards;
+  object-fit: cover; /* Prevent distortion */
+}
+
+@keyframes circleToSquare {
+  0% {
+    border-radius: 50%;
+  }
+  100% {
+    border-radius: 0%;
+  }
+}
+
 .hero-right {
   flex: 1;
   padding: 20px;
