@@ -153,25 +153,7 @@ createSkillsChart(frameworks, '.chart-container-frameworks');
 createSkillsChart(databases, '.chart-container-databases'); 
 skillsObserver.observe(skillsGrid);
 
-function navMenuToggle() {
-    const navItems = document.querySelectorAll(".nav li");
-    navItems.forEach(item => {
-      if (item.style.display === "block") {
-        item.style.display = "none";
-      } else {
-        item.style.display = "block";
-      }
-    });
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
   }
-
-  window.addEventListener("scroll", function () {
-    const profileImage = document.getElementById("profileImage");
-    const scrollPosition = window.scrollY;
-
-    // Trigger the round shape when scrolled down by 100px
-    if (scrollPosition > 100) {
-      profileImage.classList.add("round");
-    } else {
-      profileImage.classList.remove("round");
-    }
-  });  

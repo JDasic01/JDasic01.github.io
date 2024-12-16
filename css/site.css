@@ -1,4 +1,4 @@
-/* General */
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,114 +8,97 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: rgb(240, 245, 252);
+  line-height: 1.6;
 }
 
-/* Navbar */
-ul.nav {
-  top: 0;
-  position: sticky;
-  background: #2D3142;
-  width: 100%;
-  height: 60px;
-  z-index: 999;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.nav li {
-  float: left;
-}
-
-.nav a {
-  display: block;
-  color: #fff;
+a {
   text-decoration: none;
-  text-align: center;
-  padding: 14px 16px;
-  font-size: 1em;
-  font-weight: 500;
-  transition: 0.3s ease;
+  color: inherit;
 }
 
-.nav a:hover {
-  color: rgb(240, 245, 252);
-  text-decoration: underline;
+/* Navigation Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2D3142;
+  position: sticky;
+  z-index: 999;
+  top: 0;
 }
 
-.nav .icon {
+nav .logo h1 {
+  color: white;
+  font-size: 24px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 18px;
+}
+
+nav .hamburger {
   display: none;
-  float: right;
-  padding: 14px 16px;
+  flex-direction: column;
   cursor: pointer;
 }
 
-main section{
-  min-height: 20vh;
+nav .hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
 }
 
-/* Scroll animation */
-.hidden {
-  opacity: 0;
-  padding: 10px;
-  filter: blur(5px);
-  transform: translateX(-10%);
-  transition: all 1s;
+nav ul.active {
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #333;
+  padding: 20px;
 }
 
-.show {
-  opacity: 1;
-  padding: 10px;
-  filter: blur(0);
-  transform: translateX(0);
+nav ul.active li {
+  margin: 10px 0;
 }
 
-/* Hero Section */
-div.hero {
+/* Hero Section Styles */
+.hero {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: right;
-  width: 100%; 
-}
-
-div.hero .left {
-  width: 30%; 
-  justify-content: end;
-}
-
-div.hero .right {
-  width: 60%; 
-} 
-
-/* Image transition styles */
-img.responsive-image {
-  width: 100%;
-  max-width: 400px; 
-  height: auto;
-  border-radius: 0; 
-  transition: border-radius 0.5s ease, transform 0.5s ease;
-}
-
-img.responsive-image.round {
-  border-radius: 50%; 
-  transform: scale(1.1); 
-}
-
-/* Wrapper for centering */
-.image-container {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  padding: 60px 20px;
 }
 
-/* Media query for responsiveness */
-@media (max-width: 800px) {
-  img.responsive-image {
-    max-width: 200px; 
-  }
+.hero-left img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.hero-right {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-right h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-right p {
+  font-size: 20px;
+  color: #555;
 }
 
 span {
@@ -130,10 +113,6 @@ span:first-child{
 span:last-child{
   font-family: 'Montserrat Light', sans-serif;
   animation: fadeIn 1s 1s forwards cubic-bezier(0.85, 0, 0.15, 1);
-}
-
-.effect {
-  margin: 40px;
 }
 
 .text-effect p {
@@ -169,16 +148,21 @@ span:last-child{
   }
 }
 
+/* Main Section Styles */
 main {
-  padding: 20px;
+  padding: 40px 20px;
 }
 
-main h2 {
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
   border-left: 3px solid #000; 
   border-bottom: 3px solid #000;
   padding-left: 10px;
-  display: inline-block; 
-  width: 90%;
 }
 
 /* Skills Chart Containers */
@@ -227,7 +211,7 @@ main h2 {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
-  flex: 1 1 calc(50% - 20px);
+  flex: 1 1 calc(33% - 20px);
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
@@ -258,115 +242,69 @@ main h2 {
   line-height: 1.5;
 }
 
-/* Footer */
-footer {
-  padding: 10px 0;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-/* CV */
-.header {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: left;
-  font-size: 20px;
-}
-
-.row {
-  display: -webkit-flex;
+/* Contact Form Styles */
+form {
   display: flex;
+  flex-direction: column;
 }
 
-.column {
+form label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
   padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.column.side {
-   -webkit-flex: 2;
-   -ms-flex: 2;
-   flex: 2;
+form button {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.column.middle {
-  -webkit-flex: 4;
-  -ms-flex: 4;
-  flex: 4;
+form button:hover {
+  background-color: #555;
 }
 
-/* Responsive Design */
-/* Small screens */
-@media (max-width: 1000px) {
-  * {
-    box-sizing: border-box;
+/* Footer Styles */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
   }
 
-  ul.nav li {
-    float: none;
-    display: none; /* Hide items by default */
-    text-align: left;
-  }
-
-  ul.nav li.active {
-    display: block;
-  }
-
-  ul.nav .icon {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 5px;
-  }
-
-  main section{
-    min-height: 80vh;
-  }
-
-  /* Hero Section */
-  #hero {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between;
-    min-height: 80vh;
-  }
-
-  .left {
-    max-height: 80%; 
-    max-width: 80%; 
-    padding: 10px;
-    display: flex;
-    align-items: left; 
-  }
-
-  .right {
-    height: 80%; 
-    width: 80%; 
-    border: 1px ridge #000000;
-    padding: 10px;
-  }
-
-  /* Stack skill charts one below another */
-  .skills-grid {
-    display: block;
-  }
-
-  .skills-item {
+  .hero-left img {
+    width: 80%;
     margin-bottom: 20px;
-    flex: 1 1 100%;
   }
 
-  /* Projects grid items */
-  .grid {
-    display: block;
+  nav ul {
+    display: none;
+    width: 100%;
+    text-align: center;
   }
 
-  .grid-item {
-    margin-bottom: 20px;
-    flex: 1 1 100%;
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav .hamburger {
+    display: flex;
   }
 }
