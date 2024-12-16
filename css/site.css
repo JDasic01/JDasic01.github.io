@@ -21,7 +21,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px 20px;
   background-color: #2D3142;
   position: sticky;
   z-index: 999;
@@ -140,7 +140,6 @@ span:last-child{
 
 .text-effect p {
   border-left: 4px solid #000; 
-  border-bottom: 4px solid #000;
   padding: 20px 30px; 
   display: inline-block; 
   transform: scaleY(0);
@@ -296,13 +295,13 @@ form button {
 }
 
 form button:hover {
-  background-color: #7c5ce7;
+  background-color: #555;
 }
 
 /* Footer Styles */
 footer {
   text-align: center;
-  color: black;
+  color: rgb(0, 0, 0);
   padding: 20px;
 }
 
