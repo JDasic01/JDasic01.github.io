@@ -15,6 +15,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 /* Transition Styles */
 .hidden {
   opacity: 0;
@@ -32,12 +33,13 @@ a {
 /* Navigation Styles */
 nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+  justify-content: right;
+  align-items: self-start;
   background-color: #2D3142;
-  position: sticky;
+  position: sticky;  
   z-index: 999;
+  width: 100%;
+  height: 40px;
   top: 0;
 }
 
@@ -87,17 +89,36 @@ nav ul.active li {
 }
 
 /* Hero Section Styles */
-.hero {
+.container {
+  height: 500px;
+  padding: 20px;
+  padding-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  padding: 60px 20px;
+  gap: 40px;
 }
 
-.hero-left img {
-  width: 400px;
-  align-self: center;
-  justify-self: center;
+.row{
+  flex-direction: row;
+}
+
+.row-reverse{
+  flex-direction: row-reverse;
+}
+
+.container img {
+  height: 300px; 
+  width: 400px; 
+  object-fit:cover; 
+  display: block; 
+  max-width: 100%;
+}
+
+.container .text{
+ max-width: 40%;
 }
 
 /* Image Animation */
@@ -118,23 +139,6 @@ nav ul.active li {
   100% {
     border-radius: 5%;
   }
-}
-
-.hero-right {
-  flex: 1;
-  padding: 20px;
-  align-self: end;
-  justify-self: end;
-}
-
-.hero-right h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.hero-right p {
-  font-size: 20px;
-  color: #555;
 }
 
 span {
@@ -188,13 +192,18 @@ main {
   padding: 40px 20px;
 }
 
-.section {
-  margin-bottom: 40px;
+section {
+  padding: 50px 20px; 
+  margin-bottom: 40px; 
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.section h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
+h2 {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  clear: both; 
   border-left: 3px solid #000; 
   border-bottom: 3px solid #000;
   padding-left: 10px;
@@ -227,6 +236,67 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.chart-container-languages,
+.chart-container-frameworks,
+.chart-container-databases {
+  display: flex;
+  justify-content: center;
+  width: 100% !important;
+}
+
+#projects-grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(80%, 1fr)); 
+  gap: 20px; 
+  padding: 10px; 
+}
+
+/* Project grid */
+#projects-grid {
+  margin-top: 20px;
+}
+
+.grid-item {
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: scale(1.05); 
+}
+
+.skills-item {
+  opacity: 0;
+  transform: translateY(20px);
+  flex: 1 1 calc(100% - 20px);
+  text-align: center;
+  transition: all 0.5s ease;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer; 
+}
+
+.skills-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+  flex: 1 1 calc(45% - 20px);
+}
+
+/* Hover Effect */
+.skills-item:hover {
+  transform: translateY(-10px) scale(1.05); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  background-color: #f8f9fa; 
+  border-color: #007bff; 
+}
+
+/* Chart Containers */
 .chart-container-languages,
 .chart-container-frameworks,
 .chart-container-databases {
@@ -322,7 +392,7 @@ footer {
 #cv {
   font-family: 'Arial', sans-serif;
   margin: 0 auto;
-  padding: 30px;
+  padding: 10px;
   width: 80%;
   background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -426,8 +496,8 @@ footer {
 
   /* Navigation */
   nav ul {
-    display: none; /* Hide the navigation bar */
-    flex-direction: column; /* Stack items */
+    display: none;
+    flex-direction: column;
     width: 100%;
     text-align: center;
   }
@@ -441,7 +511,7 @@ footer {
   }
 
   nav ul li a {
-    font-size: 14px; /* Smaller font size for links */
+    font-size: 14px;
   }
 
   nav .hamburger {
@@ -449,75 +519,72 @@ footer {
   }
 
   /* Hero Section */
-  .hero {
-    flex-direction: column; /* Stack content vertically */
-    text-align: center;
-    padding: 40px 10px;
+  section.hero {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 20px;
   }
-
-  .hero-left img {
-    width: 80%; /* Scale image to fit smaller screens */
-    margin-bottom: 20px;
-  }
-
-  .hero-right h1 {
-    font-size: 24px; /* Reduce heading size */
-  }
-
-  .hero-right p {
-    font-size: 14px; /* Reduce paragraph size */
+  
+  section.hero .container.row-reverse {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   span {
-    font-size: calc(1rem + 0.5vw); /* Scale span text dynamically */
+    font-size: calc(1rem + 0.5vw);
   }
 
   /* Section Headings */
   .section h2 {
-    font-size: 20px; /* Reduce section heading size */
+    font-size: 20px;
     padding-left: 5px;
   }
 
   .section {
-    margin-bottom: 20px; /* Reduce section spacing */
+    margin-bottom: 20px;
   }
 
   /* Skills Chart */
   .skills-grid {
-    flex-direction: column; /* Stack skill items */
-    gap: 10px; /* Reduce spacing */
+    flex-direction: column; 
+    gap: 10px;
   }
 
-  .skills-item {
-    flex: 1 1 100%; /* Full width for skill items */
+  .skills-items, .skills-text {
+    flex: 1 1 100%;
   }
 
   .chart-container-languages svg,
   .chart-container-frameworks svg,
   .chart-container-databases svg {
-    width: 90% !important; /* Make chart half the size */
+    width: 90% !important; 
     height: auto !important;
-    margin: 0 auto; /* Center align the chart */
-    display: block; /* Ensure the SVG behaves as a block element */
+    margin: 0 auto; 
+    display: block; 
   }
 
   /* Projects */
   .grid-item {
-    flex: 1 1 calc(100% - 20px); /* Ensure grid items take full width on small screens */
-    margin-bottom: 10px; /* Add space between items */
+    flex: 1 1 calc(100% - 20px);
+    margin-bottom: 10px;
   }
 
   .grid-item.visible {
-    flex: 1 1 calc(100% - 20px); /* Ensure grid items take full width when visible */
-    margin-bottom: 10px; /* Add space between items */
+    flex: 1 1 calc(100% - 20px);
+    margin-bottom: 10px;
   }
 
   .grid-item h3 {
-    font-size: 1rem; /* Reduce title size */
+    font-size: 1rem;
   }
 
   .grid-item p {
-    font-size: 0.8rem; /* Reduce description size */
+    font-size: 0.8rem;
   }
 
   /* Contact Form */
@@ -528,7 +595,7 @@ footer {
   form input,
   form textarea {
     font-size: 14px;
-    padding: 8px; /* Reduce padding */
+    padding: 8px;
   }
 
   form button {
@@ -538,9 +605,7 @@ footer {
 
   /* Footer */
   footer {
-    font-size: 14px; 
+    font-size: 14px;
     padding: 10px;
   }
 }
-
-

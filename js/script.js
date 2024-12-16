@@ -2,13 +2,13 @@
 function createSkillsChart(skills, chartContainer) {
     // Calculate dimensions dynamically based on content
     const longestLabel = skills.reduce((longest, skill) => skill.title.length > longest.length ? skill.title : longest, "");
-    const labelWidth = longestLabel.length * 8; 
-    const width = Math.max(500, labelWidth + 100); 
-    const height = skills.length * 40 + 50; 
+    const labelWidth = longestLabel.length * 8;
+    const width = Math.max(500, labelWidth + 100);
+    const height = skills.length * 40 + 50;
     const marginTop = 10;
     const marginRight = 20;
     const marginBottom = 40;
-    const marginLeft = labelWidth + 20; 
+    const marginLeft = labelWidth + 20;
 
     const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -94,7 +94,7 @@ const projectsObserver = new IntersectionObserver((entries) => {
             });
         }
     });
-}, { threshold: 0.1 }); 
+}, { threshold: 0.1 });
 
 const skillsObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -104,9 +104,9 @@ const skillsObserver = new IntersectionObserver((entries) => {
                     item.classList.add('visible');
                 }, parseInt(item.style.transitionDelay));
             });
-        } 
+        }
     });
-}, { threshold: 0.1 }); 
+}, { threshold: 0.1 });
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -130,19 +130,18 @@ const projectGrid = document.getElementById('projects-grid');
 populateGrid(projects);
 projectsObserver.observe(projectGrid);
 
-createSkillsChart(languages, '.chart-container-languages');  
-createSkillsChart(frameworks, '.chart-container-frameworks');  
-createSkillsChart(databases, '.chart-container-databases'); 
+createSkillsChart(languages, '.chart-container-languages');
+createSkillsChart(frameworks, '.chart-container-frameworks');
+createSkillsChart(databases, '.chart-container-databases');
 const skillsGrid = document.getElementById('skills-grid');
 skillsObserver.observe(skillsGrid);
 
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
-  }
+}
 
-function sentMailAlert()
-{
+function sentMailAlert() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
