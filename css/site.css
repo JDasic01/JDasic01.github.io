@@ -280,34 +280,34 @@ main {
 }
 
 /* Contact Form Styles */
-form {
+.form {
   display: flex;
   flex-direction: column;
 }
 
-form label {
+.form label {
   margin: 10px 0 5px;
   font-weight: bold;
 }
 
-form input,
-form textarea {
+.form input,
+.form textarea {
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-form button {
+.form button {
   background-color: #333;
   color: white;
   padding: 10px;
-  border: none;
+  border: 2px;
   cursor: pointer;
   font-size: 16px;
 }
 
-form button:hover {
+.form button:hover {
   background-color: #555;
 }
 

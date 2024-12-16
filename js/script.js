@@ -140,3 +140,28 @@ function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
   }
+
+function sentMailAlert()
+{
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    /*
+    Additional logic for functional mail sending over JS would be needed here, partially implemented in comments
+    
+    // Validate form data
+    if (!name || !email || !message) {
+        alert("Please fill in all the fields.");
+        return; 
+    }
+
+    // Validate email 
+    const emailRegex = '/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/';
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return; 
+    }
+    */
+    alert("Thank you for sending the email!");
+}
