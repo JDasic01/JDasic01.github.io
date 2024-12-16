@@ -1,59 +1,59 @@
 // Skills chart
 function createSkillsChart(skills, chartContainer) {
-    // Constants for the chart layout
-    const width = 450;
-    const height = 100;
-    const marginTop = 30;
-    const marginRight = 0;
-    const marginBottom = 30;
-    const marginLeft = 100;
+    // Calculate dimensions dynamically based on content
+    const longestLabel = skills.reduce((longest, skill) => skill.title.length > longest.length ? skill.title : longest, "");
+    const labelWidth = longestLabel.length * 8; // Estimate label width (8px per character)
+
+    const width = Math.max(500, labelWidth + 100); // Ensure enough space for labels
+    const height = skills.length * 40 + 50; // Adjust height for number of skills
+    const marginTop = 10;
+    const marginRight = 20;
+    const marginBottom = 40;
+    const marginLeft = labelWidth + 20; // Dynamically set left margin for labels
 
     const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
     // Scales for the chart
     const x = d3.scaleLinear()
-        .domain([0, 100])  // Percentage goes from 0 to 100
+        .domain([0, 100]) // Percentage goes from 0 to 100
         .range([marginLeft, width - marginRight]);
 
     const y = d3.scaleBand()
-        .domain(skills.map(d => d.title))  // Using skill title for y-axis
+        .domain(skills.map(d => d.title)) // Using skill title for y-axis
         .range([marginTop, height - marginBottom])
-        .padding(0.1);
+        .padding(0.3); // Add padding between bars
 
     // Create the SVG element
     const svg = d3.select(chartContainer).append("svg")
         .attr("width", width)
         .attr("height", height)
-        .attr("viewBox", [0, 0, width, height])
-        .attr("style", "max-width: 80%; height: 100%;");
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        .attr("preserveAspectRatio", "xMinYMin meet");
 
-    // Add a rect for each skill.
+    // Add a rect for each skill
     svg.append("g")
-        .attr("fill", "steelblue")
-    .selectAll()
-    .data(skills)
-    .join("rect")
-        .attr("x", marginLeft)  // Set x to the left margin
-        .attr("y", (d) => y(d.title))  // Position the bars on the y-axis
-        .attr("width", (d) => x(d.percentage) - marginLeft)  // Set width based on percentage
+        .selectAll("rect")
+        .data(skills)
+        .join("rect")
+        .attr("x", marginLeft)
+        .attr("y", (d) => y(d.title))
+        .attr("width", (d) => x(d.percentage) - marginLeft)
         .attr("height", y.bandwidth())
-        .attr("fill", (d, i) => colorScale(i));  // Set height to band height
+        .attr("fill", (d, i) => colorScale(i));
 
-    // Add the x-axis and label.
+    // Add the x-axis
     svg.append("g")
         .attr("transform", `translate(0,${height - marginBottom})`)
-        .call(d3.axisBottom(x).ticks(5));
+        .call(d3.axisBottom(x).ticks(5).tickSizeOuter(0));
 
-    // Add the y-axis and label (for skills)
+    // Add the y-axis
     svg.append("g")
         .attr("transform", `translate(${marginLeft},0)`)
-        .call(d3.axisLeft(y))
-        .call(g => g.select(".domain").remove())
-        .call(g => g.append("text")
-            .attr("x", -marginLeft)
-            .attr("y", 10)
-            .attr("fill", "currentColor")
-            .attr("text-anchor", "start"));
+        .call(d3.axisLeft(y).tickSizeOuter(0))
+        .call(g => g.selectAll("text")
+            .style("font-size", "14px") // Ensure labels are large enough
+            .attr("dy", "0.35em") // Center text vertically
+            .attr("dx", "-0.5em")); // Add space between labels and axis
 }
 
 // Projects grid
@@ -95,7 +95,6 @@ const projectsObserver = new IntersectionObserver((entries) => {
             });
         } else 
         {
-            //dont show after loaded once, load each time the user is scrolling on page
             document.querySelectorAll('.grid-item').forEach((item) => {
                 setTimeout(() => {
                     item.classList.remove('visible');
@@ -103,7 +102,7 @@ const projectsObserver = new IntersectionObserver((entries) => {
             });
         }
     });
-}, { threshold: 0.2 }); // Trigger when at least 20% of the section is visible
+}, { threshold: 0.1 }); 
 
 const skillsObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -115,7 +114,6 @@ const skillsObserver = new IntersectionObserver((entries) => {
             });
         } else 
         {
-            //dont show after loaded once, load each time the user is scrolling on page
             document.querySelectorAll('.skills-item').forEach((item) => {
                 setTimeout(() => {
                     item.classList.remove('visible');
@@ -123,7 +121,7 @@ const skillsObserver = new IntersectionObserver((entries) => {
             });
         }
     });
-}, { threshold: 0.2 }); 
+}, { threshold: 0.1 }); 
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

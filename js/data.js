@@ -65,11 +65,11 @@ const databases= [
 
 const frameworks= [ 
     { 
-        title: ".NET Blazor",  
+        title: "Blazor",  
         percentage: 75
     },
     { 
-        title: "ASP.NET Core",  
+        title: ".NET Core",  
         percentage: 80
     },
     { 
