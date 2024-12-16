@@ -76,19 +76,22 @@ nav ul.active li {
 /* Hero Section Styles */
 .hero {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 60px 20px;
 }
 
 .hero-left img {
   width: 400px;
-  border-radius: 10px;
+  align-self: center;
+  justify-self: center;
 }
 
 .hero-right {
   flex: 1;
   padding: 20px;
+  align-self: end;
+  justify-self: end;
 }
 
 .hero-right h1 {
@@ -307,4 +310,80 @@ footer {
   nav .hamburger {
     display: flex;
   }
+
+  /* Reduce font sizes */
+  nav ul li a {
+    font-size: 16px; 
+  }
+
+  .hero-right h1 {
+    font-size: 28px; 
+  }
+
+  .hero-right p {
+    font-size: 16px; 
+  }
+
+  span {
+    font-size: calc(1.2rem + 0.5vw);
+  }
+
+  .section h2 {
+    font-size: 24px; 
+  }
+
+  .grid-item h3 {
+    font-size: 1rem; 
+  }
+
+  .grid-item p {
+    font-size: 0.9rem; 
+  }
+
+  /* Stack skill charts one below another */
+  .skills-grid {
+    display: block;
+  }
+
+  .skills .chart-container {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .skills-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    flex: 1 1 calc(33% - 20px);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+  }
+
+  /* Projects grid items */
+  .grid {
+    display: block;
+  }
+
+  .grid-item {
+    margin-bottom: 20px;
+    flex: 1 1 100%;
+  }
+
+  form label {
+    font-size: 14px; 
+  }
+
+  form input,
+  form textarea {
+    font-size: 14px; 
+  }
+
+  form button {
+    font-size: 14px; 
+    padding: 8px; 
+  }
 }
+
